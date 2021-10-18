@@ -1,7 +1,10 @@
 # Heart-Check
 
 Heart-Check is an open source ML project based on Decision Tree Architecture with a 88.7% accuracy used to predict the presence of a heart disease based on specific arguments that would be taken from the user as a survey. 
-[Working Demo](https://pip.pypa.io/en/stable/)[Colab Notebook](https://pip.pypa.io/en/stable/)
+
+[Working Demo](https://pip.pypa.io/en/stable/)
+
+ [Colab Notebook](https://pip.pypa.io/en/stable/)
 
 ## Tech Stack
 - I have used python flask for backend
