@@ -9,14 +9,12 @@ Heart-Check is an open source ML project used to predict the presence of a heart
 - Decision Tree Architecture for the model
 
 ## Array Descriptions
-The train, test arrays are 2D in shape. 
-
-The shape of the input array of the model is `(1,8)`. 
-
--The dataset contains 9 params, out of which the last param is the value to be predicted. So we have only 8 params for the training. 
--The the dataframe has data of more than 700 people, therefore the dataframe shape goes like (702,8). 
--A split of 10% is made on the data into training and testing data.
--The inputs from the html form is taken and converted into a numpy array, first reshaped by `(-1,1)`, and then again reshaped with shape `(1,8)`, and fed into the model for prediction. 
+- The train, test arrays are 2D in shape. 
+- The shape of the input array of the model is `(1,8)`. 
+- The dataset contains 9 params, out of which the last param is the value to be predicted. So we have only 8 params for the training. 
+- The the dataframe has data of more than 700 people, therefore the dataframe shape goes like (702,8). 
+- A split of 10% is made on the data into training and testing data.
+- The inputs from the html form is taken and converted into a numpy array, first reshaped by `(-1,1)`, and then again reshaped with shape `(1,8)`, and fed into the model for prediction. 
 
 
 ## Installation
