@@ -1,4 +1,7 @@
+reading time: 3 mins 
 # Heart-Check
+
+
 
 Heart-Check is an open source ML project based on Decision Tree Architecture with a 88.7% accuracy used to predict the presence of a heart disease based on specific arguments that would be taken from the user as a survey. 
 
@@ -16,11 +19,12 @@ Heart-Check is an open source ML project based on Decision Tree Architecture wit
 
 
 ## DataSet
-- The dataset is taken from UCI machine learning repository. 
+- The dataset is taken from [UCI machine learning repository](https://archive.ics.uci.edu/ml/datasets/heart+Disease) . 
 - A total of 4 different datasets have been combined to one dataframe. 
 - The used Datasets can be found in the `etc/data`directory. 
 - The data was really noisy, a lot of preprocessing still had to be done on a processed dataset. The preprocessing part can be found in the jupyter notebook inside the directory `etc/`
 - Few columns have been dropped, some of them were not much important, and few of them had a lot of missing values. 
+
 
 ## Array Descriptions
 - The train and test arrays are 2D in shape. 
