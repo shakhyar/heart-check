@@ -7,7 +7,7 @@ Heart-Check is an open source ML project based on Decision Tree Architecture wit
 
 **NOTE: demo is not up now, will be uploaded soon**
 
-[Working Demo](https://pip.pypa.io/en/stable/)
+[Working Demo](heartcheck.pythonanywhere.com)
 
  [Colab Notebook](https://colab.research.google.com/github/shakhyar/heart-check/blob/main/etc/train.ipynb)
 
