@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block hero %}
+
+
+<section class="text-gray-400 bg-gray-900 body-font relative">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col text-center w-full mb-12">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Be patient, Don't Panic!</h1>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Complete the survey to know your results</p>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Note: Input digits only!</p>
+        <br>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Some example samples(values for the below test):</p>
+        
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">[70,	1,	4,	115,	0,	0,	1,	92] will return presence of a disease</p>
+
+		<p class="lg:w-2/3 mx-auto leading-relaxed text-base">[30,	0,	1,	170,	237,	0,	1,	170] will return absence of a disease</p>
+
+		<p class="lg:w-2/3 mx-auto leading-relaxed text-base">[70,  1,  4,  140,  0,  1,  0,  157 ] will return high presence of a disease</p>
+
+      </div>
+      <form method="POST" action="#" class="lg:w-1/2 md:w-2/3 mx-auto">
+        <div class="flex flex-wrap -m-2">
+          <div class="p-2 w-1/2">
+            <div class="relative">
+
+              <label class="leading-7 text-sm text-gray-400">Age</label>
+              <input type="text" id="age" name="age" placeholder="for example 72" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></input> 
+<br>
+              <label class="leading-7 text-sm text-gray-400"><br>Gender</label>
+              <input type="text" id="gender" name="gender" placeholder="1 = Male, 0 = Female" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></input>
+<br>
+              <label class="leading-7 text-sm text-gray-400">
+              	<br>Chest PainValue <br>1 = typical angina, 2 = atypical angina, 3 = non-anginal pain, 4 = asymptomatic</label>
+              <input type="text" id="cp" name="cp" placeholder="for example, 2" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></input>
+<br>
+              <label class="leading-7 text-sm text-gray-400"><br>
+              Resting Blood Pressure in mm Hg</label>
+              <input type="text" id="trestbps" name="trestbps" placeholder="for example, 130" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></input>
+<br>
+              <label class="leading-7 text-sm text-gray-400"><br>
+              Serum Cholestoral in mg/dl</label>
+              <input type="text" id="chol" name="chol" placeholder="for example, 243" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></input>
+<br>
+              <label class="leading-7 text-sm text-gray-400"><br>Fasting Blood Sugar if greater than 120 mg/dl</label>
+              <input type="text" id="fbs" name="fbs" placeholder="1 = True, 0 = False" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></input>
+<br>
+
+              <label class="leading-7 text-sm text-gray-400">
+              	<br>Resting Electrocardiographic Results
+              	<br>-- Value 0: normal<br>--Value 1: having ST-T wave abnormality (T wave inversions and/or ST 
+                    elevation or depression of > 0.05 mV)
+        <br>-- Value 2: showing probable or definite left ventricular hypertrophy
+                    by Estes' criteria</label>
+              <input type="text" id="restecg" name="restecg" placeholder="for example, 0 for normal" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></input>
+<br>
+              <label class="leading-7 text-sm text-gray-400"><br>Maximum Heart Rate Achieved</label>
+              <input type="text" id="thalach" name="thalach" placeholder="for example, 185" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-blue-500 focus:bg-gray-900 focus:ring-2 focus:ring-blue-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></input>
+            </div>
+          </div>
+          <div class="p-2 w-full">
+            
+            <button class="flex mx-auto text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">Check!</button>
+          </div>
+          
+        </div>
+    </form>
+    </div>
+  </section>
+
+
+{% endblock %}
