@@ -35,7 +35,7 @@ Heart-Check is an open source ML project based on Decision Tree Architecture wit
 - The model prediction is something like this : `[value] `
 - The value can range from 0 to 4
 - 0 is the absence of a disease, 1 to 4 indicates the presence of a heart disease, the intensity is less when 1, a little more  when 2 and so on. 
-- since there were 4 presence values, dividing 100/4 would give is 25, i.e, 1=25% chance, 2=50% chance, and so on. 
+- since there were 4 presence values, dividing 100/4 would give us 25, i.e, 1=25% chance, 2=50% chance, and so on. 
 - But if the prediction  is 4, declaring a 100% chance would be too stiff for a prediction, so I have added a particular range of percentages for each set, and it will randomly chose among the range percentages.
 
 ## Installation
