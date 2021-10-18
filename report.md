@@ -17,4 +17,4 @@ I have used Python3 for this project, Flask for connecting the front-end with ba
 The test has been made on multiple Architectures like KNN, SVM, SGD, Naive Bayes, Random Forest, Decision Tree. KNN was giving good accuracy as well but when the value of k increased, the accuracy decreased. Also the  Decision Tree was more accurate, and was more light weight. Since if we keep scaling the model with bigger data, the KNN model might struggle, and will be more CPU intensive in future. Furthermore in future, we can also scale this service by keep increasing the data, and using deep learning for better results. Since it's just a prototype and we just want to have the basic things done, this is the best version for now. 
 
 
-More discussions and details are on my github repo https://github.com/shakhyar/heart-check/edit/main/report.md
+This project is documented more extensively on my github repo https://github.com/shakhyar/heart-check/
