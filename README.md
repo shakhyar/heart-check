@@ -27,7 +27,7 @@ Heart-Check is an open source ML project based on Decision Tree Architecture wit
 
 
 ## Model
-- The test has been performed on various architectures including SGD, Random Forest, Decision Tree, KNN, SVM, out of which, the Decision Tree was model found to have the most accuracy among all, which was 88.7%
+- The test has been performed on various architectures including SGD, Random Forest, Decision Tree, KNN, SVM, out of which, the Decision Tree model was found to have the most accuracy among all, which was 88.7%
 - The accepted array shape by the trained model has been discussed above. 
 - The model is even lighter than the KNN model, the model size of the KNN was around 90KB, while the Decision tree was only of 30KB
 
