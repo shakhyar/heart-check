@@ -14,17 +14,15 @@ pip install -r requirements.txt
 ## Usage
 Run `main.py` in the terminal, and the site will be up running on `127.0.0.1:5000`
 
-To use the model for other purposes you have to deserialize the pickle file, present in /etc/saved/
+To use the model for other purposes you have to deserialize the pickle file, present in `/etc/saved/`
+
 ```python
 import pickle
 
-model = pickle.load
+filename='etc/saved/model'
+model = pickle.load(open(filename, 'rb'))
+
+history = model.predict(array)
+print(f'predicted:{history[0]}, model score: {model.score})
+
 ```
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
