@@ -4,9 +4,10 @@
   <div class="container mx-auto flex flex-col px-5 py-24 justify-center items-center">
     <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src="https://source.unsplash.com/1080x720/?heart">
     <div class="w-full md:w-2/3 flex flex-col mb-16 items-center text-center">
-      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">There is {{pred}} chances of you getting a heart disease</h1>
-      <p class="mb-8 leading-relaxed">
+      
       	{% if val==0 %}
+      	<h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">There is less chance of you getting a heart disease</h1>
+      <p class="mb-8 leading-relaxed">
       		Chances are less, but still dont take it lightly! Maintaining a healthy heart is extremely important. Follow these step
       		<ul>
       			<li>Quit smoking</li>
@@ -24,27 +25,9 @@
 
 
 	    {% elif val==1 %}
+	    <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">There is POSITIVE chance of you getting a heart disease</h1>
+      <p class="mb-8 leading-relaxed">
 	    There is a chance of you getting a heart disease. We will recommend you to visit your doctor as soon as possible. Click below to learn about the diagnosis process. All the best!
-	    <div class="flex w-full justify-center items-end">
-	        <a href="https://www.mayoclinic.org/diseases-conditions/heart-disease/diagnosis-treatment/drc-20353124"><button class="inline-flex text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded text-lg">Learn more</button></a>
-
-
-	    {% elif val==2 %}
-	    There is a little higher chance of you getting a heart disease. We will recommend you to visit your doctor as soon as possible. Click below to learn about the diagnosis process. All the best!
-	    <div class="flex w-full justify-center items-end">
-	        <a href="https://www.mayoclinic.org/diseases-conditions/heart-disease/diagnosis-treatment/drc-20353124"><button class="inline-flex text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded text-lg">Learn more</button></a>
-	    
-
-
-	    {% elif val==3 %}
-	    You are at a higher risk!!!<br>
-	    There is a great chance of you getting a heart disease. We will recommend you to not waste any time further and visit a doctor as soon as possible. Life is short! Click below to learn about the diagnosis process. All the best!
-	    <div class="flex w-full justify-center items-end">
-	        <a href="https://www.mayoclinic.org/diseases-conditions/heart-disease/diagnosis-treatment/drc-20353124"><button class="inline-flex text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded text-lg">Learn more</button></a>
-	    
-	    
-	    {% elif val==4 %}
-	    There is a much higher chance of you getting a heart disease. We will recommend not to waste time any further and visit a Cardiologist AS SOON AS POSSIBLE. Click below to learn about the diagnosis process. All the best!
 	    <div class="flex w-full justify-center items-end">
 	        <a href="https://www.mayoclinic.org/diseases-conditions/heart-disease/diagnosis-treatment/drc-20353124"><button class="inline-flex text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded text-lg">Learn more</button></a>
 	    
