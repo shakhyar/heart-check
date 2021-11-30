@@ -3,7 +3,7 @@ reading time: 3 mins
 
 
 
-Heart-Check is an open source ML project based on Decision Tree Architecture with a 88.7% accuracy used to predict the presence of a heart disease based on specific arguments that would be taken from the user as a survey. 
+Heart-Check is an open source ML project based on KNN Architecture with a 92.3% accuracy used to predict the presence of a heart disease based on specific arguments that would be taken from the user as a survey. 
 
 
 [Working Demo](https://heartcheck.pythonanywhere.com)
@@ -51,32 +51,19 @@ print(history) # [1]
 
 
 ## Model
-- The test has been performed on various architectures including SGD, Random Forest, Decision Tree, KNN, SVM, out of which, the Decision Tree model was found to have the most accuracy among all, which was 88.7%
-- The accepted array shape by the trained model has been discussed above. 
-- The model is even lighter than the KNN model, the model size of the KNN was around 90KB, while the Decision tree was only of 30KB
+- The test has been performed on various architectures including SGD, Random Forest, Decision Tree, KNN, SVM, out of which, the KNN model was found to have the most accuracy among all, which was 92.3%
+- The accepted array shape by the trained model has been discussed above.
+
 
 ## Prediction
 - The model prediction is something like this : `[value] `
-- The value can range from 0 to 4
-- 0 is the absence of a disease, 1 to 4 indicates the presence of a heart disease, the intensity is less when 1, a little more  when 2 and so on. 
-- since there were 4 presence values, dividing 100/4 would give us 25, i.e, 1=25% chance, 2=50% chance, and so on. 
-- But if the prediction  is 4, declaring a 100% chance would be too stiff for a prediction, so to make it dynamic I have added a particular range of percentages for each set, and it will randomly choose among the range of given percentages. The code can be seen below(from `main.py`)
-
+- It wasn't exactly a binary classification problem. The target values were 0, 1, 2, 3 and 4. Any value above 0 is considered as positive. To make performance better in such a noisy dataset, this was the best option to get higher accuracy.
 ```python
 		if pred[0] == 0:
-			return render_template('results.html', pred='very less', val=0)
+			return render_template('results.html', val=0)
 
 		elif pred[0] == 1:
-			return render_template('results.html', pred=f'around {random.choice(range(24, 41))}%', val=1)	
-
-		elif pred[0] == 2:
-			return render_template('results.html', pred=f'around {random.choice(range(40, 61))}%', val=2)
-
-		elif pred[0] == 3:
-			return render_template('results.html', pred=f'around {random.choice(range(69, 81))}%', val=3)
-
-		elif pred[0] == 4:
-			return render_template('results.html', pred=f'around {random.choice(range(79, 96))}%', val=4)
+			return render_template('results.html', val=1)
 
 ```
 
