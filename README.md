@@ -33,7 +33,7 @@ classes = ['age', 'gender', 'cp', 'trestbps', 'chol', 'fbs', 'restecg', 'thalach
 - The train and test arrays are 2D in shape. 
 - The shape of the input array for prediction of the model is `(1,8)`. 
 - The dataset contains 9 params, out of which the last param is the value to be predicted. So we have only 8 params for the training. 
-- The dataframe has data of more than 700 people, therefore the dataframe shape goes like `(708,8)`.
+- The dataframe has data of more than 900 people, therefore the dataframe shape goes like `(907,8)`.
 - A split of 10% is made on the data into training and testing data.
  ```python 
  x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.1, random_state = 0) 
