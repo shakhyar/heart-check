@@ -34,7 +34,7 @@ def test():
 		thalach = int(request.form['thalach'])
 
 		pred_array = fix_array(age, gender, cp, trestbps, chol, fbs, restecg, thalach)
-		pred_array =  min_max_scaler.fit_transform(p)
+		pred_array =  min_max_scaler.fit_transform(pred_array)
 
 		pred = model.predict(pred_array)
 
