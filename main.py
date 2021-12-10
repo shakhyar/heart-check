@@ -3,11 +3,12 @@ import random
 
 import numpy as np
 from flask import Flask, render_template, request, url_for, redirect
+from sklearn.preprocessing import MinMaxScaler
 
 
 app = Flask(__name__)
 model = pickle.load(open('etc/saved/model', 'rb'))
-
+min_max_scaler = MinMaxScaler()
 
 def fix_array(*args):
 	arr = np.array(args)
@@ -33,6 +34,7 @@ def test():
 		thalach = int(request.form['thalach'])
 
 		pred_array = fix_array(age, gender, cp, trestbps, chol, fbs, restecg, thalach)
+		pred_array =  min_max_scaler.fit_transform(p)
 
 		pred = model.predict(pred_array)
 
