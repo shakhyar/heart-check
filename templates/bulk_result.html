@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block hero %}
+<div class="flex items-center justify-center min-h-screen bg-gray-900">
+	<div class="col-span-12">
+		<div class="overflow-auto lg:overflow-visible ">
+			<table class="table text-gray-400 border-separate space-y-6 text-sm">
+				<thead class="bg-gray-800 text-gray-500">
+					<tr>
+						<th class="p-3">Serial Number</th>
+						<th class="p-3 text-left">Prediction</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for i in pred %}
+					<tr class="bg-gray-800">
+						<td class="p-3">
+							<div class="flex align-items-center">
+								<div class="ml-3">
+									<div class="">{{loop.index}}                                             </div>
+									<div class="text-gray-500"></div>
+								</div>
+							</div>
+						</td>
+						<td class="p-3">
+							{{i}}
+						</td>
+					</tr>
+					{% endfor %}
+					
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<style>
+	.table {
+		border-spacing: 0 15px;
+	}
+
+	i {
+		font-size: 1rem !important;
+	}
+
+	.table tr {
+		border-radius: 20px;
+	}
+
+	tr td:nth-child(n+5),
+	tr th:nth-child(n+5) {
+		border-radius: 0 .625rem .625rem 0;
+	}
+
+	tr td:nth-child(1),
+	tr th:nth-child(1) {
+		border-radius: .625rem 0 0 .625rem;
+	}
+</style>
+{% endblock %}

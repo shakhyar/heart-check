@@ -2,13 +2,20 @@ import pickle
 import random
 
 import numpy as np
+import pandas as pd
 from flask import Flask, render_template, request, url_for, redirect
-from sklearn.preprocessing import MinMaxScaler
+from werkzeug.utils import secure_filename
+
 
 
 app = Flask(__name__)
 model = pickle.load(open('etc/saved/model', 'rb'))
-min_max_scaler = MinMaxScaler()
+
+classes = ['age', 'gender', 'cp', 'trestbps', 'chol', 'fbs', 'restecg', 'thalach',
+           'exang', 'oldpeak', 'slope', 'ca', 'thal', 'target']
+
+classes_to_drop = ['exang', 'oldpeak', 'slope', 'ca', 'thal', 'target']
+
 
 def fix_array(*args):
 	arr = np.array(args)
@@ -20,6 +27,31 @@ def fix_array(*args):
 @app.route('/')
 def index():
 	return render_template('index.html')
+
+
+@app.route('/bulk', methods=['POST', 'GET'])
+def bulk():
+	if request.method == "POST":
+		f = request.files['file']
+		fname = f.filename
+		f.save(secure_filename(f.filename))
+		data = pd.read_csv(f.filename)
+
+		data.columns = classes
+		for i in classes_to_drop:
+			data.drop(i, inplace=True, axis=1)
+
+
+		pred = model.predict(data)
+
+		
+		return render_template('bulk_result.html', pred=list(pred))
+
+	else:
+		return render_template("bulk.html")
+
+
+
 
 @app.route('/heart', methods=['GET', 'POST'])
 def test():
@@ -34,7 +66,6 @@ def test():
 		thalach = int(request.form['thalach'])
 
 		pred_array = fix_array(age, gender, cp, trestbps, chol, fbs, restecg, thalach)
-		pred_array =  min_max_scaler.fit_transform(pred_array)
 
 		pred = model.predict(pred_array)
 
